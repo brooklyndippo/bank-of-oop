@@ -47,7 +47,9 @@ class BankAccount:
         print('```')
 
 ### Test code for each method
-
+print('---------------- Program Test Code ----------------')
+print('Test class instance and methods')
+print('----------------------------------------------------')
 brooklyn = BankAccount('Brooklyn', '227658021', 'savings', 1000.00)
 brooklyn.deposit(120)
 brooklyn.withdraw(1000)
@@ -57,6 +59,9 @@ brooklyn.print_statement()
 brooklyn.deposit(341.33)
 
 ### Sample Code
+print('-------------------- Sample Code --------------------')
+print ('Create a bank account for Mitchell')
+print('-----------------------------------------------------')
 mitchell = BankAccount('Mitchell Hudson', '3141592', 'checking', 0)
 #deposit $400,000 into "Mitchell's" account. 
 mitchell.deposit(400000)
@@ -71,7 +76,11 @@ mitchell.withdraw(150)
 #print a statement
 mitchell.print_statement()
 
-#stretch challenge - checking vs savings interest
+# stretch challenge 1 - 
+# #checking vs savings interest
+print('---------------- Stretch Challenge 1 ----------------')
+print('See different interest accrual between savings vs. checking accounts')
+print('-----------------------------------------------------')
 bobs_bank_account = BankAccount ('Bob Bobson', ' 97811764', 'checking', 2500)
 bills_bank_account = BankAccount('Bill Billson', '335718401', 'savings', 2500)
 
@@ -79,3 +88,15 @@ bobs_bank_account.add_interest()
 bobs_bank_account.print_statement()
 bills_bank_account.add_interest()
 bills_bank_account.print_statement()
+
+# stretch challenge 2 -
+# create a list with all of the bank accounts & add interest to all with for loop
+print('---------------- Stretch Challenge 2 ----------------')
+print('Add interest to all bank accounts')
+print('-----------------------------------------------------')
+
+bank = [brooklyn, mitchell, bobs_bank_account, bills_bank_account]
+
+for account in bank:
+    account.add_interest()
+    account.print_statement()
