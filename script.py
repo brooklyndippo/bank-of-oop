@@ -4,16 +4,21 @@ class BankAccount:
         self.account = account_number
         self.balance = balance
 
+    def format_nums(self, num):
+        two_decimals = str(round(num, 2))
+        print(f'two decimals {two_decimals}')
+        return two_decimals
+
     def deposit(self, amount):
-        self.balance += amount 
-        print(f'Amount deposited: ${amount}.')
-        print(f'New balance: ${self.balance}.')
+        self.balance += amount
+        print('Amount deposited: ${:0.2f}'.format(amount))
+        print('New balance: ${:0.2f}'.format(self.balance))
 
     def withdraw(self, amount):
         if amount < self.balance:
             self.balance -= amount
-            print(f'Amount withdrawn: ${amount}.')
-            print(f'New balance: ${self.balance}.')
+            print('Amount withdrawn: ${:0.2f}'.format(amount))
+            print('New balance: ${:0.2f}'.format(self.balance))
         else:
             print('Insufficient funds.')
             print('Overdraft fee of $10 deducted from your balance.')
@@ -21,7 +26,7 @@ class BankAccount:
 
     def get_balance(self):
         print(f'Good day, {self.name}!') 
-        print(f'Your current balance for account number {self.account} is: ${self.balance}') 
+        print('Your current balance is: ${:0.2f}'.format(self.balance)) 
         return self.balance
 
     def add_interest(self):
@@ -36,7 +41,7 @@ class BankAccount:
         print('```')
         print(f'{self.name}') 
         print(f'Account No.: {hidden_digits}{last_four}') 
-        print(f'Balance: ${self.balance}') 
+        print('Balance: ${:0.2f}'.format(self.balance)) 
         print('```')
 
 
@@ -45,3 +50,4 @@ brooklyn.deposit(120)
 brooklyn.withdraw(1000)
 brooklyn.get_balance()
 brooklyn.print_statement()
+brooklyn.deposit(341.33)
